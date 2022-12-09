@@ -14,6 +14,8 @@
 //sender
 const s = sender
 
+console.log(`消息平台：${s.getPlatform()}`)
+
 var data = request({
     // 内置http请求函数
     url: "http://ovooa.com/API/cosplay/api.php", //请求链接
