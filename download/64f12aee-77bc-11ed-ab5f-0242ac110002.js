@@ -10,6 +10,7 @@
  * @public false
 */
 
+const recall = require("消息撤回模块")
 //sender
 const s = sender
 
@@ -32,8 +33,7 @@ function main() {
             }
         });
         var id = s.reply(image(data.headers.Location))
-        sleep(10000)
-        s.recallMessage(s.getMessageId(), id)
+        recall.recallMessage(s.getMessageId(), id, 10000)
     }
 }
 main()

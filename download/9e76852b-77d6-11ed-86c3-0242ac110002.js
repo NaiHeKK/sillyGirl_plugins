@@ -12,6 +12,8 @@
  * @public false
 */
 
+const recall = require("消息撤回模块");
+
 //sender
 const s = sender
 const autoReCall = new Bucket("autoReCall")
@@ -102,10 +104,9 @@ function main() {
                 if (result != '' && result != null) {
                     const messageId = s.getMessageId()
                     console.log(`消息ID：${messageId}`)
-                    s.recallMessage(s.getMessageId())
+                    recall.recallMessage(s.getMessageId())
                     let id = s.reply(`命中关键词${keyword.value}(${keyword.desc})，已撤回`)
-                    sleep(10000)
-                    s.recallMessage(id)
+                    recall.recallMessage(id, 1000)
                 }
             })
         }

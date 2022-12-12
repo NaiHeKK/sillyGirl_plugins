@@ -9,6 +9,7 @@
  * @public false
 */
 
+const recall = require("消息撤回模块")
 //sender
 const s = sender
 
@@ -21,5 +22,5 @@ var {headers} = request({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
         }
     })
-console.log("nyn")
-s.reply(`${video(headers.Location[0])}`)
+
+recall.recallMessage(s.getMessageId(), s.reply(`${video(headers.Location[0])}`), 6000)
