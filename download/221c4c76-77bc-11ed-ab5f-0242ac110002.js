@@ -3,6 +3,7 @@
  * @version v1.0.0
 * @create_at 2022-09-07 23:05:40
 * @description 随机抖音视频
+* @platform qq wx tg pgm web
 * @title 扭一扭
 * @rule ^nyn$
 * @rule ^扭一扭$
@@ -22,5 +23,7 @@ var {headers} = request({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
         }
     })
-
-recall.recallMessage(s.getMessageId(), s.reply(`${video(headers.Location[0])}`), 6000)
+console.log(s.getPlatform())
+let id = s.reply(`${video(headers.Location[0])}`)
+recall.recallMessage(s.getMessageId(), id, 6000)
+// recall.recallMessage(s.getMessageId(), s.reply(`${video(headers.Location[0])}`), 60000)
