@@ -33,7 +33,7 @@ function main() {
             }
         });
         var id = s.reply(image(data.headers.Location))
-        recall.recallMessage(s.getMessageId(), id, 10000)
+        recall.recallMessage(s.getMessageId(), id, 20000)
     }
 }
 main()
