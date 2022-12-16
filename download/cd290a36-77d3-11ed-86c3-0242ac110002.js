@@ -1,5 +1,5 @@
 /**
-* @author cdle
+* @author YuanKK
 * @create_at 2022-09-08 21:46:36
 * @description 🐒执行青龙2.13.9以后才有的订阅任务
 * @version v1.0.0
